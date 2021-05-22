@@ -69,29 +69,31 @@ class Validation {
     }
 
 
-    isValidMonthName(month, lang) {
-        const monthName = {
-            lt: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            en: ['Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Geguze', 'Birzelis', 'Liepa', 'Rugpjutis', 'Rugsėjis', 'Spalis', 'Lapkritis', 'Gruodis'],
+    isValidMonthName(month, lang) {  
+        const monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Geguze', 'Birzelis', 'Liepa', 'Rugpjutis', 'Rugsėjis', 'Spalis', 'Lapkritis', 'Gruodis']
+        for (let i = 0; i < monthName.length; i++) {
+            if (month === monthName[i]) {
+                return true;
+            }
         }
-        if (!monthName[lang].includes(month)) {
-            console.error('ERROR: Month has to be with proper name');
-            return false;
-        }
-        return true;
+        console.error('ERROR: Month has to be with proper name');
+        return false;
     }
 
 
     isValidWeekdayName(weekday, lang) {
-        const weekdayName = {
-            lt: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-            en: ['Pirmadienis', 'Antradienis', 'Treciadienis', 'Ketvirtadienis', 'Penktadienis', 'Sestadienis', 'Sekmadienis'],
+        //const weekdayName = {
+           // lt: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+           // en: ['Pirmadienis', 'Antradienis', 'Treciadienis', 'Ketvirtadienis', 'Penktadienis', 'Sestadienis', 'Sekmadienis'],
+
+        let weekName = ['Monday', 'Tuesday', 'Thirsday', 'Wednesday', 'Friday', 'Saturday', 'Sunday', 'Pirmadienis', 'Antradienis', 'Treciadienis', 'Ketvirtadienis', 'Penktadienis', 'Sestadienis', 'Sekmadienis'];
+        for (let j = 0; j < weekName.length; j++) {
+            if (weekday === weekName[j].toLowerCase()) return true;
+            
+            if (weekday !== weekName[j].toUpperCase()) return true;
         }
-        if (!weekdayName[lang].includes(weekday)) {
-            console.error('ERROR: Weekday has to be with proper name');
-            return false;
-        }
-        return true;
+        console.error('ERROR: Day has to be with proper name');
+        return false;
     }
 
 
