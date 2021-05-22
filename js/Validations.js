@@ -88,8 +88,7 @@ class Validation {
 
         let weekName = ['Monday', 'Tuesday', 'Thirsday', 'Wednesday', 'Friday', 'Saturday', 'Sunday', 'Pirmadienis', 'Antradienis', 'Treciadienis', 'Ketvirtadienis', 'Penktadienis', 'Sestadienis', 'Sekmadienis'];
         for (let j = 0; j < weekName.length; j++) {
-            if (weekday === weekName[j].toLowerCase()) return true;
-            
+            if (weekday === weekName[j].toLowerCase()) return true;           
             if (weekday !== weekName[j].toUpperCase()) return true;
         }
         console.error('ERROR: Day has to be with proper name');
