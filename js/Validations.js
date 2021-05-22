@@ -60,6 +60,8 @@ class Validation {
 
     isValidPhoneNum(phoneNum) {
         const symbol = phoneNum.search(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/);
+        //const symbol = /^\d{10}$/;
+        //if((phoneNum.value.match(symbol))
         if(symbol > -1) {
             return true;
         }
@@ -96,11 +98,11 @@ class Validation {
     isValidPersinalId(personalId) {
         // ar sudetis yra skaiciai
         // ar ilgis === 11
-        // ar pirmas skaicius 3 arba 4 (5 & 6)
-        if (typeof personalId === 'number' || personalId !== 'string' || personalId === '') return false;
+        // ar pirmas skaicius < 3 arba > 6 -> true
+        if (isNaN(personalId)) return false; 
         if (personalId.length !== 11) return false;
-        if (personalId[0] !== 3 || personalId[0] !== 4) return false;
-        
+        if (personalId[0] < 3 || personalId[0] > 6) return false;
+    
         return true;
     }
 }
