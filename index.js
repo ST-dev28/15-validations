@@ -56,3 +56,4 @@ console.log(v.isValidPersinalId('7991201000'), false);
 console.log(v.isValidPersinalId('asdfghjklmn'), false);
 console.log(v.isValidPersinalId('19912010001'), false);
 console.log(v.isValidPersinalId('69912010001'), true);
+console.log(v.isValidPersinalId('!!991201000'), false);
