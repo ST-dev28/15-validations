@@ -42,10 +42,21 @@ const v = new Validation();
 //console.log(v.isValidPhoneNum('+(123) 456-7890'), true);
 
 
-//console.log(v.isValidMonthName('January'), true);
-//console.log(v.isValidMonthName('Sausis'), true);
-//console.log(v.isValidWeekdayName('Saturday'), true);
-//console.log(v.isValidWeekdayName('Sestadienis'), true);
+console.log(v.isValidMonthName('January'), true);
+console.log(v.isValidMonthName('june'), true)
+console.log(v.isValidMonthName('Sausis'), true);
+console.log(v.isValidMonthName('vasaris'), true);
+console.log(v.isValidMonthName('voras'), false);
+console.log(v.isValidMonthName('55dd'), false);
+console.log(v.isValidMonthName('++**!!'), false);
+
+/*
+console.log(v.isValidWeekdayName('Saturday'), true);
+console.log(v.isValidWeekdayName('Sestadienis'), true);
+console.log(v.isValidWeekdayName('pirmadienis'), true);
+console.log(v.isValidWeekdayName('tuesday'), true);
+console.log(v.isValidWeekdayName('nsdgftfvdgd'), false);
+console.log(v.isValidWeekdayName('55522444'), false);
 
 console.log(v.isValidPersinalId('49912010001'), true);
 console.log(v.isValidPersinalId('39912010001'), true);
@@ -58,3 +69,6 @@ console.log(v.isValidPersinalId('19912010001'), false);
 console.log(v.isValidPersinalId('69912010001'), true);
 console.log(v.isValidPersinalId('!!991201000'), false);
 console.log(v.isValidPersinalId('lyymmdd123x'), false);
+console.log(v.isValidPersinalId('4-991201000'), false);
+console.log(v.isValidPersinalId('459912010001'), false);
+*/

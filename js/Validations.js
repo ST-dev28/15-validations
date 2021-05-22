@@ -72,9 +72,9 @@ class Validation {
     isValidMonthName(month, lang) {  
         const monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Geguze', 'Birzelis', 'Liepa', 'Rugpjutis', 'Rugsėjis', 'Spalis', 'Lapkritis', 'Gruodis']
         for (let i = 0; i < monthName.length; i++) {
-            if (month === monthName[i]) {
-                return true;
-            }
+            if (month === monthName[i]) return true;
+            if (month === monthName[i].toLowerCase()) return true;   
+            if (month !== monthName[i].toUpperCase()) return true;
         }
         console.error('ERROR: Month has to be with proper name');
         return false;
