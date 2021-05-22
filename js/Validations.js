@@ -59,7 +59,8 @@ class Validation {
 
 
     isValidPhoneNum(phoneNum) {
-        if ('' + parseInt('+'.slice(1)) === '+'.slice(1)) {
+        const symbol = phoneNum.search(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/);
+        if(symbol > -1) {
             return true;
         }
         return false;
@@ -96,12 +97,10 @@ class Validation {
         // ar sudetis yra skaiciai
         // ar ilgis === 11
         // ar pirmas skaicius 3 arba 4 (5 & 6)
-        if (typeof personalId !== 'number' || personalId.lenglth < 11 || personalId === '') {
-            return false;
-        }
-        if (personalId[1] !== 3 || personalId[1] !== 4) {
-            return false;
-        }
+        if (typeof personalId === 'number' || personalId !== 'string' || personalId === '') return false;
+        if (personalId.length !== 11) return false;
+        if (personalId[0] !== 3 || personalId[0] !== 4) return false;
+        
         return true;
     }
 }
