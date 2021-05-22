@@ -5,7 +5,7 @@
 
 # Validation
 
-_28 group project_
+_group project_practice_
 
 This project is for educational porpuses only.
 
