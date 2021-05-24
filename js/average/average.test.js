@@ -12,11 +12,11 @@ test('string is not allowed', () => {
     expect(average('abc', 8, 10)).toBeFalsy();
 });
 
-test('string is not allowed', () => {
+test('string and NaN are not allowed', () => {
     expect(average(NaN, 'abc', 20)).toBeFalsy();
 });
 
-test('string is not allowed', () => {
+test('NaN is not allowed', () => {
     expect(average(10, NaN, 8)).toBe(false);
 });
 
