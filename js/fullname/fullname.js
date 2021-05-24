@@ -7,8 +7,7 @@ function fullname(firstname, lastname) {
         lastname.includes(' ')) {
         return false;
     }
-    if (typeof firstname === '' ||
-        typeof lasttname === '') {
+    if (typeof firstname === '' || typeof lastname === '') {
         return false;
     }
 
