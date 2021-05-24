@@ -1,10 +1,13 @@
 function fullname(firstname, lastname) {
-    if (firstname[0].toLowerCase() === firstname[0]) {
-      return false;  
+    if (firstname === firstname.toLowerCase() ||
+        lastname === lastname.toLowerCase()) {
+        return false;  
     } 
-    if (lastname[0].toLowerCase() === lastname[0]) {
-      return false;  
+    if (firstname.includes(' ') ||
+        lastname.includes(' ')) {
+        return false;
     }
+
 return firstname + ' ' + lastname;
 }
 
