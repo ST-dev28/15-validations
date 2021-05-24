@@ -30,7 +30,7 @@ test('error as firstname must start in capital letter', () => {
     expect(fullname('vardenis', 'Pavardenis')).toBe(false);
 });
 
-test('error as last tname must start in capital letter', () => {
+test('error as lastname must start in capital letter', () => {
     expect(fullname('Vardenis', 'pavardenis')).toBe(false);
 });
 
